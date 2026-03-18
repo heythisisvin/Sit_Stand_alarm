@@ -36,8 +36,15 @@ while run == True:
     label = tk.Label(root, text="Time to stand up!", font=("Arial", 24))
     label.pack(pady=20)
     root.protocol("WM_DELETE_WINDOW", on_close)
-
-
     root.after(6000, auto_close)
+    if root.after(6000, auto_close) == True:
+        alarm_window = tk.Toplevel(root)
+        alarm_window.title("Reminder")
+        alarm_window.geometry("300x150")
+        label = tk.Label(alarm_window, text="Time to sit down!")
+        label.pack(pady=20)
+        root.after(6000, auto_close)
+        break
+
     root.mainloop()
 

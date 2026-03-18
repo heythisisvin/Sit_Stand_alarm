@@ -51,6 +51,7 @@ def start_alarm():
         alarm_condition_start()
         sit_down_alarm()
 
+start_alarm()
 
 
 
